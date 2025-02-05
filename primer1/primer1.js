@@ -59,5 +59,3 @@ function toCelsius(fahrenheit) {
 
 
 export default temperatureConversion;
-
-
