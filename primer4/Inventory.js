@@ -1,6 +1,9 @@
+import Product from './Product.js';
+import Clothing from './Clothing.js';
+import Electronics from './Electronics.js';
+
 class Inventory {
   #products;
-
   constructor() {
     this.#products = new Map();
   }

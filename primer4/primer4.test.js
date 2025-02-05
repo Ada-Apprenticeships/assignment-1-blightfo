@@ -1,6 +1,7 @@
 // Import the necessary modules
-import Product from './Product.js';
 import Inventory from './Inventory.js';
+import Clothing from './Clothing.js';
+import Electronics from './Electronics.js';
 
 describe('Inventory', () => {
   let inventory;
@@ -8,8 +9,8 @@ describe('Inventory', () => {
 
   beforeEach(() => {
     inventory = new Inventory();
-    product1 = new Product("A123", "T-shirt", 19.99, 100);
-    product2 = new Product("B456", "Jeans", 49.99, 50);
+    product1 = new Clothing("A123", "T-shirt", 19.99, 100, "L", "Cotton");
+    product2 = new Clothing("B456", "Jeans", 49.99, 50, "M", "Denim");
   });
 
   describe('Adding Products', () => {
@@ -60,14 +61,18 @@ describe('Inventory', () => {
             id: "A123",
             name: "T-shirt",
             price: 19.99,
-            quantity: 100
+            quantity: 100,
+            size: "L",
+            material: "Cotton"
         });
 
         expect(inventory.getProduct("B456")).toEqual({
             id: "B456",
             name: "Jeans",
             price: 49.99,
-            quantity: 50
+            quantity: 50,
+            size: "M",
+            material: "Denim"
         });
     });
   });
